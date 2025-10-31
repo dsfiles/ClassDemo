@@ -36,12 +36,21 @@ namespace Rational
             denominator = temp;
         }
 
+
+        public Rational Add(Rational r1, Rational r2)
+        {
+            int numerator = r1.numerator * r2.denominator + r2.numerator * r1.denominator;
+            int denominator = r1.denominator * r2.denominator;
+            return new Rational(numerator, denominator);
+
+        }
+
         public static int Gcd(int a, int b)
         {
             // Base case: If b is 0, then a is the GCD.
             if (b == 0)
             {
-                return a; 
+                return a;   
             }
             else
             {

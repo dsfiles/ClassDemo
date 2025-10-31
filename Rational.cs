@@ -16,8 +16,9 @@ namespace Rational
         }
         public Rational(int numerator, int denominator)
         {
-            this.numerator = numerator;
-            this.denominator = denominator;
+            int d = Gcd(numerator, denominator);
+            this.numerator = numerator/d;
+            this.denominator = denominator/d;
         }
         public void Display()
         {
@@ -34,5 +35,19 @@ namespace Rational
             numerator = denominator;
             denominator = temp;
         }
+
+        public static int Gcd(int a, int b)
+        {
+            // Base case: If b is 0, then a is the GCD.
+            if (b == 0)
+            {
+                return a; 
+            }
+            else
+            {
+                return Gcd(b, a % b);
+            }
+        }
+
     }
 }

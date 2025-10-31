@@ -45,6 +45,23 @@ namespace Rational
 
         }
 
+        public static Rational Add2(Rational r1, Rational r2)
+        {
+            int numerator = r1.numerator * r2.denominator + r2.numerator * r1.denominator;
+            int denominator = r1.denominator * r2.denominator;
+            return new Rational(numerator, denominator);
+
+        }
+
+        public Rational Add3(Rational r1)
+        {
+            int numerator = r1.numerator * this.denominator + this.numerator * r1.denominator;
+            int denominator = r1.denominator * this.denominator;
+            return new Rational(numerator, denominator);
+
+        }
+
+
         public static int Gcd(int a, int b)
         {
             // Base case: If b is 0, then a is the GCD.

@@ -24,6 +24,10 @@ namespace Rational
             Console.WriteLine($"{this.numerator}/{this.denominator}");
         }
 
+        public static void Display2(Rational r)
+        {
+            Console.WriteLine($"{r.numerator}/{r.denominator}");
+        }
         public void Invert()
         {
             int temp = numerator;
